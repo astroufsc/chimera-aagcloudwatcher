@@ -1,0 +1,324 @@
+Windows PowerShell
+Copyright (C) 2009 Microsoft Corporation. All rights reserved.
+
+PS C:\Windows\system32> New-Object -com AAG_CloudWatcher.CloudWatcher
+
+
+AAG_SafeDelayValue             : 0
+AAG_SafeDelayMsg               :
+AAG_SafeDelayWait              : 0
+AAG_CloudAlarmDelay            : 0
+AAG_DeviceRole                 : REMOTE
+AAG_DeviceSwitchCtrl           : False
+AAG_SpeedUnits                 : K
+UnitSpeed                      : K
+AAG_TemperatureUnits           : C
+WindowLeft                     : 9945
+WindowTop                      : 1275
+Name                           : AAG_CloudWatcher
+Version                        : 7.20.100
+ThreshBrightnessDark           : 2100
+ThreshBrightnessLigth          : 6
+ThreshBrightnessVLigth         : 0
+BrightnessUnknowConditionValue : 60000
+ThreshRainDry                  : 2000
+ThreshRainWet                  : 1700
+ThreshRainRain                 : 400
+RainUnknowConditionValue       : 400
+ThreshTempClear                : -25
+ThreshTempCloudy               : -15
+ThreshTempVCloudy              : 30
+CloudUnknowConditionValue      : 30
+ThreshWindCalm                 : 5
+ThreshWindWindy                : 10
+ThreshWindVWindy               : 999
+ColorClear                     : 12648384
+ColorCloudy                    : 12648447
+ColorVCloudy                   : 12640511
+ColorDry                       : 12648384
+ColorWet                       : 12648447
+ColorRain                      : 12640511
+ColorDark                      : 12648384
+ColorLight                     : 12648447
+ColorVLight                    : 12640511
+ColorCalm                      : 12648384
+ColorWindy                     : 12648447
+ColorVWindy                    : 12640511
+DescriptionClear               : Clear
+DescriptionCloudy              : Cloudy
+DescriptionVCloudy             : Overcast
+DescriptionDry                 : Dry
+DescriptionWet                 : Wet
+DescriptionRain                : Rain
+DescriptionDark                : Dark
+DescriptionLight               : Light
+DescriptionVLight              : Very Light
+DescWindCalm                   : Calm
+DescWindWindy                  : Windy
+DescWindVWindy                 : Very Windy
+AlarmClear                     : 0
+AlarmCloudy                    : 0
+AlarmOvercast                  : 0
+AlarmDry                       : 0
+AlarmWet                       : 0
+AlarmRain                      : 0
+AlarmDark                      : 0
+AlarmLight                     : 0
+AlarmVLight                    : 0
+SoundClear                     :
+SoundCloudy                    :
+SoundOvercast                  :
+SoundDry                       :
+SoundWet                       :
+SoundRain                      :
+SoundDark                      :
+SoundLight                     :
+SoundVLight                    :
+SafeClear                      : 0
+SafeCloudy                     : 0
+SafeOvercast                   : 1
+SafeDry                        : 0
+SafeWet                        : 0
+SafeRain                       : 1
+SafeDark                       : 0
+SafeLight                      : 0
+SafeVLight                     : 1
+SafeWindCalm                   : 0
+SafeWindWindy                  : 0
+SafeWindVWindy                 : 0
+TempFactorON                   : True
+TempFactorK1                   : 33
+TempFactorK2                   : 0
+TempFactorK3                   : 4
+TempFactorK4                   : 100
+TempFactorK5                   : 100
+TempFactorK6                   : 0
+TempFactorK7                   : 0
+AlarmSuspendSound              : 0
+NoConsecutiveUnknownReads      : 3
+NoConsecutiveRS232Errors       : 3
+FileName                       : CloudWatcher_data04
+filePath                       : C:\Users\t80\Desktop
+FileSaveFrequency              : 1
+ReadCycle                      : 10
+HeaterTempLow                  : 0
+HeaterTempHigh                 : 20
+HeaterDeltaLow                 : 6
+HeaterDeltaHigh                : 4
+HeaterImpTemp                  : 10
+HeaterImpDuration              : 60
+HeaterImpCycle                 : 600
+GraphFrequency                 : 6
+GraphImagePath                 : C:\Program Files (x86)\AAG_CloudWatcher
+GraphNoOfPoints                : 120
+GraphGenerateCloud             : 1
+GraphPoints                    : 120
+GraphLabelColorCloud           : 4210752
+GraphGraphColorCloud           : 12582912
+GraphCreateImageCloud          : 1
+GraphGenerateRain              : 1
+GraphLabelColorRain            : 4210752
+GraphGraphColorRain            : 12582912
+GraphCreateImageRain           : 1
+GraphGenerateBrightness        : 1
+GraphLabelColorBrightness      : 4210752
+GraphGraphColorBrightness      : 12582912
+GraphCreateImageBrightness     : 1
+GraphGenerateTemp              : 1
+GraphLabelColorTemp            : 4210752
+GraphGraphColorTemp            : 12582912
+GraphBackColorTemp             : 16777152
+GraphMaxTempTemp               : 30
+GraphMinTempTemp               : -30
+GraphCreateImageTemp           : 1
+
+
+
+PS C:\Windows\system32> New-Object -com AAG_CloudWatcher.CloudWatcher | Get-Member
+
+
+   TypeName: System.__ComObject#{ee363d98-26b5-4614-ae01-f731c3165bc9}
+
+Name                           MemberType Definition
+----                           ---------- ----------
+AAG_AlarmStart                 Method     void AAG_AlarmStart (string)
+AAG_AlarmStop                  Method     void AAG_AlarmStop ()
+AAG_DataDisplayed              Method     string AAG_DataDisplayed (string, string)
+AAG_DeviceStop                 Method     void AAG_DeviceStop ()
+AAG_GraphArrayCloud            Method     Variant AAG_GraphArrayCloud ()
+AAG_GraphArrayDay              Method     Variant AAG_GraphArrayDay ()
+AAG_GraphArrayFirstElem        Method     int AAG_GraphArrayFirstElem (int)
+AAG_GraphArrayLastElem         Method     int AAG_GraphArrayLastElem (int)
+AAG_GraphArrayRain             Method     Variant AAG_GraphArrayRain ()
+AAG_GraphArrayTemp             Method     Variant AAG_GraphArrayTemp ()
+AAG_IsWindPresent              Method     bool AAG_IsWindPresent ()
+AAG_LocalControl               Method     void AAG_LocalControl (bool, string)
+AAG_SetSwitch                  Method     void AAG_SetSwitch (int)
+AAG_TotalNoUsers               Method     int AAG_TotalNoUsers ()
+AAG_UseWeatherCenter           Method     string AAG_UseWeatherCenter ()
+AAG_XFERFileErr                Method     bool AAG_XFERFileErr ()
+AmbientTemperature             Method     double AmbientTemperature ()
+BlinkLEDCOM                    Method     void BlinkLEDCOM ()
+BrightnessValue                Method     double BrightnessValue ()
+Condition_Brightness           Method     BrightnessCond Condition_Brightness ()
+Condition_Cloud                Method     CloudCond Condition_Cloud ()
+Condition_Rain                 Method     RainCond Condition_Rain ()
+Condition_Sky                  Method     SkyCond Condition_Sky ()
+Condition_WetF                 Method     bool Condition_WetF ()
+Condition_Wind                 Method     WindCond Condition_Wind ()
+DataReady                      Method     bool DataReady ()
+DeviceIsRunning                Method     bool DeviceIsRunning ()
+Device_Start                   Method     void Device_Start ()
+Device_Stop                    Method     void Device_Stop ()
+DewPointTemp                   Method     double DewPointTemp ()
+GetGraphCycle                  Method     int GetGraphCycle (int)
+GetGraphFreq                   Method     int GetGraphFreq (int)
+GraphTemperatureMax            Method     int GraphTemperatureMax (int)
+GraphTemperatureMin            Method     int GraphTemperatureMin (int)
+HumidityRelative               Method     double HumidityRelative ()
+LastReading                    Method     Variant LastReading ()
+MForm                          Method     IDispatch MForm ()
+RainHeaterPercent              Method     double RainHeaterPercent ()
+RainHeaterStatus               Method     string RainHeaterStatus ()
+RainHeaterTemperature          Method     double RainHeaterTemperature ()
+RainValue                      Method     double RainValue ()
+RecordSetMode                  Method     void RecordSetMode (bool)
+RecordStart                    Method     void RecordStart (bool)
+RecordStop                     Method     void RecordStop ()
+Safe                           Method     bool Safe ()
+SecondsSinceGoodData           Method     int SecondsSinceGoodData ()
+SetUnSafe                      Method     void SetUnSafe (bool)
+SkySensorTemperature           Method     double SkySensorTemperature ()
+SkyTemperature                 Method     double SkyTemperature ()
+SwitchStatus                   Method     int SwitchStatus ()
+WindDir                        Method     double WindDir ()
+WindowMinimize                 Method     void WindowMinimize ()
+WindowNormal                   Method     void WindowNormal ()
+WindValue                      Method     double WindValue ()
+AAG_CloudAlarmDelay            Property   int AAG_CloudAlarmDelay () {get} {set}
+AAG_DeviceRole                 Property   string AAG_DeviceRole () {get}
+AAG_DeviceSwitchCtrl           Property   bool AAG_DeviceSwitchCtrl () {get} {set}
+AAG_SafeDelayMsg               Property   string AAG_SafeDelayMsg () {get}
+AAG_SafeDelayValue             Property   int AAG_SafeDelayValue () {get} {set}
+AAG_SafeDelayWait              Property   int AAG_SafeDelayWait () {get}
+AAG_SpeedUnits                 Property   string AAG_SpeedUnits () {get} {set}
+AAG_TemperatureUnits           Property   string AAG_TemperatureUnits () {get} {set}
+AlarmClear                     Property   int AlarmClear () {get} {set}
+AlarmCloudy                    Property   int AlarmCloudy () {get} {set}
+AlarmDark                      Property   int AlarmDark () {get} {set}
+AlarmDry                       Property   int AlarmDry () {get} {set}
+AlarmLight                     Property   int AlarmLight () {get} {set}
+AlarmOvercast                  Property   int AlarmOvercast () {get} {set}
+AlarmRain                      Property   int AlarmRain () {get} {set}
+AlarmSuspendSound              Property   int AlarmSuspendSound () {get} {set}
+AlarmVLight                    Property   int AlarmVLight () {get} {set}
+AlarmWet                       Property   int AlarmWet () {get} {set}
+BrightnessUnknowConditionValue Property   int BrightnessUnknowConditionValue () {get} {set}
+CloudUnknowConditionValue      Property   int CloudUnknowConditionValue () {get} {set}
+ColorCalm                      Property   int ColorCalm () {get} {set}
+ColorClear                     Property   int ColorClear () {get} {set}
+ColorCloudy                    Property   int ColorCloudy () {get} {set}
+ColorDark                      Property   int ColorDark () {get} {set}
+ColorDry                       Property   int ColorDry () {get} {set}
+ColorLight                     Property   int ColorLight () {get} {set}
+ColorRain                      Property   int ColorRain () {get} {set}
+ColorVCloudy                   Property   int ColorVCloudy () {get} {set}
+ColorVLight                    Property   int ColorVLight () {get} {set}
+ColorVWindy                    Property   int ColorVWindy () {get} {set}
+ColorWet                       Property   int ColorWet () {get} {set}
+ColorWindy                     Property   int ColorWindy () {get} {set}
+DescriptionClear               Property   string DescriptionClear () {get} {set}
+DescriptionCloudy              Property   string DescriptionCloudy () {get} {set}
+DescriptionDark                Property   string DescriptionDark () {get} {set}
+DescriptionDry                 Property   string DescriptionDry () {get} {set}
+DescriptionLight               Property   string DescriptionLight () {get} {set}
+DescriptionRain                Property   string DescriptionRain () {get} {set}
+DescriptionVCloudy             Property   string DescriptionVCloudy () {get} {set}
+DescriptionVLight              Property   string DescriptionVLight () {get} {set}
+DescriptionWet                 Property   string DescriptionWet () {get} {set}
+DescWindCalm                   Property   string DescWindCalm () {get} {set}
+DescWindVWindy                 Property   string DescWindVWindy () {get} {set}
+DescWindWindy                  Property   string DescWindWindy () {get} {set}
+FileName                       Property   string FileName () {get} {set}
+filePath                       Property   string filePath () {get} {set}
+FileSaveFrequency              Property   int FileSaveFrequency () {get} {set}
+GraphBackColorTemp             Property   int GraphBackColorTemp () {get} {set}
+GraphCreateImageBrightness     Property   int GraphCreateImageBrightness () {get} {set}
+GraphCreateImageCloud          Property   int GraphCreateImageCloud () {get} {set}
+GraphCreateImageRain           Property   int GraphCreateImageRain () {get} {set}
+GraphCreateImageTemp           Property   int GraphCreateImageTemp () {get} {set}
+GraphFrequency                 Property   int GraphFrequency () {get} {set}
+GraphGenerateBrightness        Property   int GraphGenerateBrightness () {get} {set}
+GraphGenerateCloud             Property   int GraphGenerateCloud () {get} {set}
+GraphGenerateRain              Property   int GraphGenerateRain () {get} {set}
+GraphGenerateTemp              Property   int GraphGenerateTemp () {get} {set}
+GraphGraphColorBrightness      Property   int GraphGraphColorBrightness () {get} {set}
+GraphGraphColorCloud           Property   int GraphGraphColorCloud () {get} {set}
+GraphGraphColorRain            Property   int GraphGraphColorRain () {get} {set}
+GraphGraphColorTemp            Property   int GraphGraphColorTemp () {get} {set}
+GraphImagePath                 Property   string GraphImagePath () {get} {set}
+GraphLabelColorBrightness      Property   int GraphLabelColorBrightness () {get} {set}
+GraphLabelColorCloud           Property   int GraphLabelColorCloud () {get} {set}
+GraphLabelColorRain            Property   int GraphLabelColorRain () {get} {set}
+GraphLabelColorTemp            Property   int GraphLabelColorTemp () {get} {set}
+GraphMaxTempTemp               Property   int GraphMaxTempTemp () {get} {set}
+GraphMinTempTemp               Property   int GraphMinTempTemp () {get} {set}
+GraphNoOfPoints                Property   int GraphNoOfPoints () {get} {set}
+GraphPoints                    Property   int GraphPoints () {get} {set}
+HeaterDeltaHigh                Property   int HeaterDeltaHigh () {get} {set}
+HeaterDeltaLow                 Property   int HeaterDeltaLow () {get} {set}
+HeaterImpCycle                 Property   int HeaterImpCycle () {get} {set}
+HeaterImpDuration              Property   int HeaterImpDuration () {get} {set}
+HeaterImpTemp                  Property   int HeaterImpTemp () {get} {set}
+HeaterTempHigh                 Property   int HeaterTempHigh () {get} {set}
+HeaterTempLow                  Property   int HeaterTempLow () {get} {set}
+Name                           Property   string Name () {get}
+NoConsecutiveRS232Errors       Property   int NoConsecutiveRS232Errors () {get} {set}
+NoConsecutiveUnknownReads      Property   int NoConsecutiveUnknownReads () {get} {set}
+RainUnknowConditionValue       Property   int RainUnknowConditionValue () {get} {set}
+ReadCycle                      Property   int ReadCycle () {get} {set}
+SafeClear                      Property   int SafeClear () {get} {set}
+SafeCloudy                     Property   int SafeCloudy () {get} {set}
+SafeDark                       Property   int SafeDark () {get} {set}
+SafeDry                        Property   int SafeDry () {get} {set}
+SafeLight                      Property   int SafeLight () {get} {set}
+SafeOvercast                   Property   int SafeOvercast () {get} {set}
+SafeRain                       Property   int SafeRain () {get} {set}
+SafeVLight                     Property   int SafeVLight () {get} {set}
+SafeWet                        Property   int SafeWet () {get} {set}
+SafeWindCalm                   Property   int SafeWindCalm () {get} {set}
+SafeWindVWindy                 Property   int SafeWindVWindy () {get} {set}
+SafeWindWindy                  Property   int SafeWindWindy () {get} {set}
+SoundClear                     Property   string SoundClear () {get} {set}
+SoundCloudy                    Property   string SoundCloudy () {get} {set}
+SoundDark                      Property   string SoundDark () {get} {set}
+SoundDry                       Property   string SoundDry () {get} {set}
+SoundLight                     Property   string SoundLight () {get} {set}
+SoundOvercast                  Property   string SoundOvercast () {get} {set}
+SoundRain                      Property   string SoundRain () {get} {set}
+SoundVLight                    Property   string SoundVLight () {get} {set}
+SoundWet                       Property   string SoundWet () {get} {set}
+TempFactorK1                   Property   int TempFactorK1 () {get} {set}
+TempFactorK2                   Property   int TempFactorK2 () {get} {set}
+TempFactorK3                   Property   int TempFactorK3 () {get} {set}
+TempFactorK4                   Property   int TempFactorK4 () {get} {set}
+TempFactorK5                   Property   int TempFactorK5 () {get} {set}
+TempFactorK6                   Property   int TempFactorK6 () {get} {set}
+TempFactorK7                   Property   int TempFactorK7 () {get} {set}
+TempFactorON                   Property   bool TempFactorON () {get} {set}
+ThreshBrightnessDark           Property   double ThreshBrightnessDark () {get} {set}
+ThreshBrightnessLigth          Property   double ThreshBrightnessLigth () {get} {set}
+ThreshBrightnessVLigth         Property   double ThreshBrightnessVLigth () {get} {set}
+ThreshRainDry                  Property   double ThreshRainDry () {get} {set}
+ThreshRainRain                 Property   double ThreshRainRain () {get} {set}
+ThreshRainWet                  Property   double ThreshRainWet () {get} {set}
+ThreshTempClear                Property   double ThreshTempClear () {get} {set}
+ThreshTempCloudy               Property   double ThreshTempCloudy () {get} {set}
+ThreshTempVCloudy              Property   double ThreshTempVCloudy () {get} {set}
+ThreshWindCalm                 Property   double ThreshWindCalm () {get} {set}
+ThreshWindVWindy               Property   double ThreshWindVWindy () {get} {set}
+ThreshWindWindy                Property   double ThreshWindWindy () {get} {set}
+UnitSpeed                      Property   string UnitSpeed () {get} {set}
+Version                        Property   string Version () {get}
+WindowLeft                     Property   int WindowLeft () {get} {set}
+WindowTop                      Property   int WindowTop () {get} {set}

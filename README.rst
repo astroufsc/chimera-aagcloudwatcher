@@ -1,56 +1,47 @@
-chimera-template plugin
-=======================
+chimera-aagcloudwatcher plugin
+==============================
 
-This is a template plugin for the chimera observatory control system
-https://github.com/astroufsc/chimera.
+Chimera plugin for `AAG cloud watcher`_ safety cloud detector. This plugin uses the COM+ methods available by the AAG
+ Cloud watcher software on Windows to comunicate with the device. A future implementation can be done to connect to the
+ device over serial. Nevertheless, the usage of Windows software haves the advantage of the easy calibration access.
+
+ A dump of all COM+ methods accessible for developers can be found on docs directory and a brief explanation can be
+ found on Cloud Watcher documentation: http://lunatico.es/aagcw/enhelp/scr/Inter-program%20Communications/41-InterprogramCommunicationProtocol.htm
 
 Usage
 -----
 
-Rename chimera_template for your plugin name. It is important that the plugin
-name must start with chimera\_ to be found by chimera. Instruments and
-controllers must follow the standard ``chimera_(plugin_name)/(instruments|controllers)/(plugin).py``
+In the same computer were the AAG software is running, install this plugin and configure it accordingly to the example
+ below.
 
-The class inside ``(plugin).py`` should be named Plugin (with CamelCase letters).
+* Download link for the AAG software: http://www.lunatico.es/ourproducts/aag-cloud-watcher/moreinfo/software-downloads.html
 
-For more info: https://github.com/astroufsc/chimera/blob/master/docs/site/chimerafordevs.rst#chimera-objects
-
+* Help for the AAG software: http://lunatico.es/aagcw/enhelp/
 
 Installation
 ------------
 
-Installation instructions. Dependencies, etc...
-
 ::
 
-   pip install -U chimera_template
-
-or
-
-::
-
-    pip install -U git+https://github.com/astroufsc/chimera-template.git
+    pip install -U git+https://github.com/astroufsc/chimera-aagcloudwatcher.git
 
 
 Configuration Example
 ---------------------
 
-Here goes an example of the configuration to be added on ``chimera.config`` file.
+To configure this plugin, simply add this configuration to the ``chimera.config`` file:
 
 ::
 
-    instrument:
-        name: model
-        type: Example
+    weatherstations:
+        name: aag
+        type: AAGCloudWatcherCOM
 
 
-Tested Hardware (for instruments)
----------------------------------
+Tested versions
+---------------
 
-This plugin was tested on these hardware:
-
-* Hardware example 1, model 2
-* Hardware example 2, model 3
+This plugin was tested on AAG cloud watcher software version 7.20.100
 
 
 Contact
@@ -60,4 +51,4 @@ For more information, contact us on chimera's discussion list:
 https://groups.google.com/forum/#!forum/chimera-discuss
 
 Bug reports and patches are welcome and can be sent over our GitHub page:
-https://github.com/astroufsc/chimera-template/
+https://github.com/astroufsc/chimera-aagcloudwatcher/
