@@ -1,7 +1,7 @@
 chimera-aagcloudwatcher plugin
 ==============================
 
-Chimera plugin for `AAG cloud watcher`_ safety cloud detector. This plugin uses the COM+ methods available by the AAG
+ Chimera plugin for `AAG cloud watcher`_ safety cloud detector. This plugin uses the COM+ methods available by the AAG
  Cloud watcher software on Windows to comunicate with the device. A future implementation can be done to connect to the
  device over serial. Nevertheless, the usage of Windows software haves the advantage of the easy calibration access.
 
@@ -11,7 +11,7 @@ Chimera plugin for `AAG cloud watcher`_ safety cloud detector. This plugin uses 
 Usage
 -----
 
-In the same computer were the AAG software is running, install this plugin and configure it accordingly to the example
+ In the same computer were the AAG software is running, install this plugin and configure it accordingly to the example
  below.
 
 * Download link for the AAG software: http://www.lunatico.es/ourproducts/aag-cloud-watcher/moreinfo/software-downloads.html
@@ -52,3 +52,5 @@ https://groups.google.com/forum/#!forum/chimera-discuss
 
 Bug reports and patches are welcome and can be sent over our GitHub page:
 https://github.com/astroufsc/chimera-aagcloudwatcher/
+
+.. _AAG cloud watcher: http://www.lunatico.es/ourproducts/aag-cloud-watcher.html
