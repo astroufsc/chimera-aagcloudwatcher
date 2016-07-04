@@ -1,7 +1,7 @@
 chimera-aagcloudwatcher plugin
 ==============================
 
-.. image:: https://github.com/astroufsc/chimera-stellarium/raw/master/docs/images/img1.png
+.. image:: https://github.com/astroufsc/chimera-aagcloudwatcher/raw/master/docs/images/img1.png
 
 Chimera plugin for `AAG cloud watcher`_ safety cloud detector. This plugin uses the COM+ methods available by the AAG Cloud watcher software on Windows to comunicate with the device. A future implementation can be done to connect to the device over serial. Nevertheless, the usage of Windows software haves the advantage of the easy calibration access.
 
