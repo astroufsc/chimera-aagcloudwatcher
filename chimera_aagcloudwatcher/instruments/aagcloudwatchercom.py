@@ -3,7 +3,7 @@ import logging
 import sys
 from astropy import units
 from chimera.instruments.weatherstation import WeatherBase
-from chimera.interfaces.weatherstation import WeatherTemperature, WeatherSafety, WSValue, WeatherRain
+from chimera.interfaces.weatherstation import WeatherTemperature, WeatherSafety, WSValue  # , WeatherRain
 
 log = logging.getLogger(__name__)
 
@@ -15,7 +15,7 @@ else:
     log.warning("Not on Windows. COM+ AAG cloud watcher plugin won't work.")
 
 
-class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherRain, WeatherSafety):
+class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety):
     __config__ = dict(
         model="AAGWare Cloud Watcher",
     )
@@ -54,14 +54,14 @@ class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherRain, WeatherSa
         pythoncom.CoUninitialize()
         return ret
 
-    def isRaining(self):
-        pythoncom.CoInitialize()
-        self._ocwStream.Seek(0, 0)
-        _ocw = Dispatch(pythoncom.CoUnmarshalInterface(self._ocwStream, pythoncom.IID_IDispatch))
-        ret = _ocw.Condition_Rain() > 1
-        self._ocwStream.Seek(0, 0)
-        pythoncom.CoUninitialize()
-        return ret
+    # def isRaining(self):
+    #     pythoncom.CoInitialize()
+    #     self._ocwStream.Seek(0, 0)
+    #     _ocw = Dispatch(pythoncom.CoUnmarshalInterface(self._ocwStream, pythoncom.IID_IDispatch))
+    #     ret = _ocw.Condition_Rain() > 1
+    #     self._ocwStream.Seek(0, 0)
+    #     pythoncom.CoUninitialize()
+    #     return ret
 
     def okToOpen(self):
         """
