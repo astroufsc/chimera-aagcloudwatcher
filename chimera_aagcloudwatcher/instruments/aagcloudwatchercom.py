@@ -54,14 +54,14 @@ class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety):
         pythoncom.CoUninitialize()
         return ret
 
-    # def isRaining(self):
-    #     pythoncom.CoInitialize()
-    #     self._ocwStream.Seek(0, 0)
-    #     _ocw = Dispatch(pythoncom.CoUnmarshalInterface(self._ocwStream, pythoncom.IID_IDispatch))
-    #     ret = _ocw.Condition_Rain() > 1
-    #     self._ocwStream.Seek(0, 0)
-    #     pythoncom.CoUninitialize()
-    #     return ret
+    def isRaining(self):
+        pythoncom.CoInitialize()
+        self._ocwStream.Seek(0, 0)
+        _ocw = Dispatch(pythoncom.CoUnmarshalInterface(self._ocwStream, pythoncom.IID_IDispatch))
+        ret = _ocw.Condition_Rain() > 1
+        self._ocwStream.Seek(0, 0)
+        pythoncom.CoUninitialize()
+        return ret
 
     def okToOpen(self):
         """
@@ -74,3 +74,9 @@ class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety):
         self._ocwStream.Seek(0, 0)
         pythoncom.CoUninitialize()
         return ret
+
+
+    def getMetadata(self, request):
+        # Temperature
+        temp = self.temperature()
+        return [('METTEMP', str(temp.value), ('[%s] Weather station temperature' % temp.unit))]
