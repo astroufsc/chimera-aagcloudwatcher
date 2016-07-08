@@ -3,7 +3,7 @@ import logging
 import sys
 from astropy import units
 from chimera.instruments.weatherstation import WeatherBase
-from chimera.interfaces.weatherstation import WeatherTemperature, WeatherSafety, WSValue  # , WeatherRain
+from chimera.interfaces.weatherstation import WeatherTemperature, WeatherSafety, WSValue, WeatherTransparency  # , WeatherRain
 
 log = logging.getLogger(__name__)
 
@@ -15,9 +15,10 @@ else:
     log.warning("Not on Windows. COM+ AAG cloud watcher plugin won't work.")
 
 
-class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety):
+class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety, WeatherTransparency):
     __config__ = dict(
         model="AAGWare Cloud Watcher",
+        # transparency_
     )
 
     def __init__(self):
@@ -59,6 +60,16 @@ class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety):
         self._ocwStream.Seek(0, 0)
         _ocw = Dispatch(pythoncom.CoUnmarshalInterface(self._ocwStream, pythoncom.IID_IDispatch))
         ret = _ocw.Condition_Rain() > 1
+        self._ocwStream.Seek(0, 0)
+        pythoncom.CoUninitialize()
+        return ret
+
+    def sky_transparency(self, unit_out=units.pct):
+        pythoncom.CoInitialize()
+        self._ocwStream.Seek(0, 0)
+        _ocw = Dispatch(pythoncom.CoUnmarshalInterface(self._ocwStream, pythoncom.IID_IDispatch))
+        ret = WSValue(datetime.datetime.utcnow(),
+                       self._convert_units(_ocw.SkyTemperature(), units.pct, unit_out), unit_out)
         self._ocwStream.Seek(0, 0)
         pythoncom.CoUninitialize()
         return ret
