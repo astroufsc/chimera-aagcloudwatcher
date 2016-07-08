@@ -18,7 +18,9 @@ else:
 class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety, WeatherTransparency):
     __config__ = dict(
         model="AAGWare Cloud Watcher",
-        # transparency_
+        transparency_zero = 36,
+        transparency_temp_close = -25,
+        transparency_factor = 3.2,
     )
 
     def __init__(self):
@@ -68,8 +70,9 @@ class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety, Weather
         pythoncom.CoInitialize()
         self._ocwStream.Seek(0, 0)
         _ocw = Dispatch(pythoncom.CoUnmarshalInterface(self._ocwStream, pythoncom.IID_IDispatch))
+        transp = (self["transparency_temp_close"]-_ocw.SkyTemperature())*self["transparency_factor"]+self["transparency_zero"]
         ret = WSValue(datetime.datetime.utcnow(),
-                       self._convert_units(_ocw.SkyTemperature(), units.pct, unit_out), unit_out)
+                       self._convert_units(transp, units.pct, unit_out), unit_out)
         self._ocwStream.Seek(0, 0)
         pythoncom.CoUninitialize()
         return ret
