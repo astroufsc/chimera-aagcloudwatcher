@@ -1,9 +1,10 @@
 import datetime
 import logging
 import sys
+
 from astropy import units
 from chimera.instruments.weatherstation import WeatherBase
-from chimera.interfaces.weatherstation import WeatherTemperature, WeatherSafety, WSValue  # , WeatherRain
+from chimera.interfaces.weatherstation import WeatherTemperature, WeatherSafety, WSValue, WeatherTransparency
 
 log = logging.getLogger(__name__)
 
@@ -15,7 +16,7 @@ else:
     log.warning("Not on Windows. COM+ AAG cloud watcher plugin won't work.")
 
 
-class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety):
+class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety, WeatherTransparency):
     __config__ = dict(
         model="AAGWare Cloud Watcher",
     )
@@ -75,6 +76,11 @@ class AAGCloudWatcherCOM(WeatherBase, WeatherTemperature, WeatherSafety):
         pythoncom.CoUninitialize()
         return ret
 
+    def sky_transparency(self, unit_out=units.pct):
+        if self.okToOpen():
+            return WSValue(datetime.datetime.utcnow(), self._convert_units(100, units.pct, unit_out), unit_out)
+        else:
+            return WSValue(datetime.datetime.utcnow(), self._convert_units(0, units.pct, unit_out), unit_out)
 
     def getMetadata(self, request):
         # Temperature
